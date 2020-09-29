@@ -28,6 +28,8 @@ header-includes:
 - \captionsetup[figure]{name=Figura,position=below}
 - \BeforeBeginEnvironment{figure}{\vskip-8ex}
 - \AfterEndEnvironment{figure}{\vskip+0ex}
+- \titlegraphic{\includegraphics[width=7cm]{logo.png}} 
+
 ---
 
 ## R Markdown
@@ -41,18 +43,16 @@ When you click the **Knit** button a document will be generated that includes bo
 - Bullet 1
 - Bullet 2
 - Bullet 3
-CPCOLS <- c("#9A32CD", "#33a02c", "#e31a1c")
 
-ggplot(iris, aes(Sepal.Length, Petal.Length)) +
-      geom_point(aes(col = Species)) +
-      scale_colour_manual(values = CPCOLS)
+
 ## Slide with R Output
 
 ```{r cars, echo = TRUE}
 
 library(knitr) 
 library(kableExtra)
-kbl(summary(cars),booktabs = TRUE, caption ="Tabla de prueba")
+kbl(summary(cars),booktabs = TRUE, 
+    caption ="Tabla de prueba")
 
 ```
 
